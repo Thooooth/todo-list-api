@@ -58,7 +58,7 @@ Para usar a API, envie requisições HTTP para os endpoints apropriados. Certifi
 
 Exemplo de criação de uma nova tarefa:
 
-`
+```
 POST /api/tasks.php
 Content-Type: application/json
 {
@@ -67,7 +67,7 @@ Content-Type: application/json
 "description": "Comprar 2 litros de leite no supermercado",
 "status": "pendente"
 }
-`
+```
 
 ## Segurança
 
