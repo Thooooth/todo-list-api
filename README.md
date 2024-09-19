@@ -9,7 +9,7 @@ Este é um projeto de backend em PHP para um sistema de gerenciamento de tarefas
 - Apache Server
 
 ## Estrutura do Projeto
-`
+```
 todo-list-api/
 ├── config/
 │   └── database.php            # Configuração do banco de dados
@@ -28,9 +28,7 @@ todo-list-api/
 ├── .htaccess                   # Configuração de reescrita de URLs
 ├── index.php                   # Ponto de entrada principal
 └── README.md                   # Documentação do projeto
-`
-
-
+```
 ## Configuração
 
 1. Clone o repositório para o seu servidor local.
