@@ -11,29 +11,24 @@ Este é um projeto de backend em PHP para um sistema de gerenciamento de tarefas
 ## Estrutura do Projeto
 
 todo-list-api/
-│
 ├── config/
-│ └── database.php
-│
+│   └── database.php            # Configuração do banco de dados
 ├── models/
-│ ├── Task.php
-│ └── User.php
-│
+│   ├── Task.php                # Modelo da entidade Tarefa
+│   └── User.php                # Modelo da entidade Usuário
 ├── controllers/
-│ ├── TaskController.php
-│ └── UserController.php
-│
+│   ├── TaskController.php      # Lógica do CRUD de Tarefas
+│   └── UserController.php      # Lógica do CRUD de Usuários
 ├── api/
-│ ├── tasks.php
-│ └── users.php
-│
+│   ├── tasks.php               # Endpoints para manipulação de Tarefas
+│   └── users.php               # Endpoints para manipulação de Usuários
 ├── utils/
-│ ├── Response.php
-│ └── Validator.php
-│
-├── .htaccess
-├── index.php
-└── README.md
+│   ├── Response.php            # Classe para formatar respostas da API
+│   └── Validator.php           # Validação de dados da API
+├── .htaccess                   # Configuração de reescrita de URLs
+├── index.php                   # Ponto de entrada principal
+└── README.md                   # Documentação do projeto
+
 
 
 ## Configuração
