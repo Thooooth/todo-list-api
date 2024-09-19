@@ -9,7 +9,7 @@ Este é um projeto de backend em PHP para um sistema de gerenciamento de tarefas
 - Apache Server
 
 ## Estrutura do Projeto
-
+`
 todo-list-api/
 ├── config/
 │   └── database.php            # Configuração do banco de dados
@@ -28,7 +28,7 @@ todo-list-api/
 ├── .htaccess                   # Configuração de reescrita de URLs
 ├── index.php                   # Ponto de entrada principal
 └── README.md                   # Documentação do projeto
-
+`
 
 
 ## Configuração
@@ -60,6 +60,7 @@ Para usar a API, envie requisições HTTP para os endpoints apropriados. Certifi
 
 Exemplo de criação de uma nova tarefa:
 
+`
 POST /api/tasks.php
 Content-Type: application/json
 {
@@ -68,7 +69,7 @@ Content-Type: application/json
 "description": "Comprar 2 litros de leite no supermercado",
 "status": "pendente"
 }
-
+`
 
 ## Segurança
 
