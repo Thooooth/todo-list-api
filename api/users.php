@@ -6,41 +6,38 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 include_once '../config/database.php';
-include_once '../controllers/TaskController.php';
-require_once '../middleware/AuthMiddleware.php';
+include_once '../controllers/UserController.php';
 
 $database = new Database();
 $db = $database->getConnection();
 
-$taskController = new TaskController($db);
-
-$user_id = AuthMiddleware::authenticate();
+$userController = new UserController($db);
 
 $method = $_SERVER['REQUEST_METHOD'];
 
 switch($method) {
     case 'GET':
-        if (isset($_GET['id'])) {
-            echo $taskController->getTask($_GET['id'], $user_id);
-        } else {
-            echo $taskController->getTasks($user_id);
-        }
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        echo $userController->getUsers($id);
         break;
     case 'POST':
         $data = json_decode(file_get_contents("php://input"));
-        $data->user_id = $user_id;
-        echo $taskController->createTask($data);
+        if (isset($data->action) && $data->action === 'login') {
+            echo $userController->login($data);
+        } else {
+            echo $userController->createUser($data);
+        }
         break;
     case 'PUT':
         $data = json_decode(file_get_contents("php://input"));
-        echo $taskController->updateTask($data, $user_id);
+        echo $userController->updateUser($data);
         break;
     case 'DELETE':
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         if ($id === null) {
-            echo Response::json(400, "ID da tarefa não fornecido");
+            echo Response::json(400, "ID do usuário não fornecido");
         } else {
-            echo $taskController->deleteTask($id, $user_id);
+            echo $userController->deleteUser($id);
         }
         break;
     default:
